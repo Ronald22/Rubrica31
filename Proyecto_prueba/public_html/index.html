@@ -26,21 +26,26 @@ and open the template in the editor.
     </head>
     <body>
         <h1>Mi Primera Animación en Javascript </h1>
-        <button>Click aquí</button>
+        <button onclick="miAnimacion()">Click aquí</button>
         
         <div id="contenedor">
             <div id="animar"></div>
         </div> 
         
         <script>
-            var id = setInterval(frame, 5);
-
-            function frame() {
-                if (/* test for finished */) {
-                    clearInterval(id);
+            function miAnimacion() {
+              var elem = document.getElementById("animar");
+              var pos = 0;
+              var id = setInterval(frame, 5);
+              function frame() {
+                if (pos === 350) {
+                  clearInterval(id);
                 } else {
-                    /* code to change the element style */  
+                  pos++;
+                  elem.style.top = pos + 'px';
+                  elem.style.left = pos + 'px';
                 }
+              }
             }
         </script>
     </body>
