@@ -31,8 +31,10 @@ and open the template in the editor.
         <div id="contenedor">
             <div id="animar"></div>
         </div> 
-        
+        <div id="prueba"></div>
         <script>
+            var hora = new.Date()
+            document.getElementById("prueba").innerHTML = hora;
             function miAnimacion() {
               var elem = document.getElementById("animar");
               var pos = 0;
